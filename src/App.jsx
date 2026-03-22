@@ -31,7 +31,7 @@ const App = () => {
       <Navbar />
 
       {/* Fix spacing for fixed navbar */}
-      <div className="pt-20">
+      <div className="pt-16 sm:pt-20">
 
         <ScrollToTop />
 

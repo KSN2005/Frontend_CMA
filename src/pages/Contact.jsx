@@ -46,11 +46,11 @@ const Contact = () => {
   };
 
   return (
-    <div className="bg-black text-white min-h-screen px-6 py-20">
+    <div className="bg-black text-white min-h-screen px-4 sm:px-6 py-12 sm:py-16 md:py-20">
 
       {/* 🌈 Background Glow */}
       <div className="absolute inset-0 bg-gradient-to-br from-indigo-900 via-black to-black" />
-      <div className="absolute w-[400px] h-[400px] bg-blue-500/20 blur-3xl rounded-full top-[-100px] left-[-100px]" />
+      <div className="absolute w-[250px] h-[250px] md:w-[400px] md:h-[400px] bg-blue-500/20 blur-3xl rounded-full top-[-100px] left-[-100px]" />
 
       <div className="relative z-10 max-w-6xl mx-auto">
 
@@ -58,34 +58,34 @@ const Contact = () => {
         <motion.h1
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
-          className="text-4xl md:text-5xl font-bold text-center mb-4"
+          className="text-3xl sm:text-4xl md:text-5xl font-bold text-center mb-2 sm:mb-4"
         >
           Contact Me
         </motion.h1>
 
-        <p className="text-center text-slate-400 mb-12">
-          Let’s discuss how I can help your business grow 🚀
+        <p className="text-center text-slate-400 mb-8 sm:mb-12 text-sm sm:text-base">
+          Let's discuss how I can help your business grow 🚀
         </p>
 
-        <div className="grid md:grid-cols-2 gap-10">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8 md:gap-10">
 
           {/* INFO CARD */}
           <motion.div
             initial={{ opacity: 0, x: -40 }}
             animate={{ opacity: 1, x: 0 }}
-            className="p-8 bg-white/10 backdrop-blur-lg border border-white/20 rounded-2xl"
+            className="p-5 sm:p-6 md:p-8 bg-white/10 backdrop-blur-lg border border-white/20 rounded-2xl h-fit"
           >
-            <h2 className="text-2xl font-semibold mb-6">
+            <h2 className="text-xl sm:text-2xl font-semibold mb-4 sm:mb-6">
               Get in Touch
             </h2>
 
-            <div className="space-y-4 text-slate-300">
+            <div className="space-y-3 sm:space-y-4 text-slate-300 text-sm sm:text-base">
               <p>📧 himanshu@email.com</p>
               <p>📞 +91 12345 67890</p>
               <p>📍 Delhi, India</p>
             </div>
 
-            <div className="mt-6 text-sm text-slate-400">
+            <div className="mt-4 sm:mt-6 text-xs sm:text-sm text-slate-400">
               Financial Accounting • Cost Management • Tax • Advisory
             </div>
           </motion.div>
@@ -94,10 +94,10 @@ const Contact = () => {
           <motion.div
             initial={{ opacity: 0, x: 40 }}
             animate={{ opacity: 1, x: 0 }}
-            className="p-8 bg-white/10 backdrop-blur-lg border border-white/20 rounded-2xl"
+            className="p-5 sm:p-6 md:p-8 bg-white/10 backdrop-blur-lg border border-white/20 rounded-2xl"
           >
 
-            <form onSubmit={handleSubmit} className="space-y-5">
+            <form onSubmit={handleSubmit} className="space-y-3 sm:space-y-5">
 
               <input
                 type="text"
@@ -106,7 +106,7 @@ const Contact = () => {
                 onChange={handleChange}
                 required
                 placeholder="Full Name"
-                className="w-full bg-transparent border border-white/20 rounded-lg px-4 py-3 focus:outline-none focus:border-blue-400"
+                className="w-full bg-transparent border border-white/20 rounded-lg px-3 sm:px-4 py-2 sm:py-3 text-sm sm:text-base focus:outline-none focus:border-blue-400 transition"
               />
 
               <input
@@ -116,7 +116,7 @@ const Contact = () => {
                 onChange={handleChange}
                 required
                 placeholder="Email Address"
-                className="w-full bg-transparent border border-white/20 rounded-lg px-4 py-3 focus:outline-none focus:border-blue-400"
+                className="w-full bg-transparent border border-white/20 rounded-lg px-3 sm:px-4 py-2 sm:py-3 text-sm sm:text-base focus:outline-none focus:border-blue-400 transition"
               />
 
               <input
@@ -125,14 +125,14 @@ const Contact = () => {
                 value={formData.phone}
                 onChange={handleChange}
                 placeholder="Phone (optional)"
-                className="w-full bg-transparent border border-white/20 rounded-lg px-4 py-3 focus:outline-none focus:border-blue-400"
+                className="w-full bg-transparent border border-white/20 rounded-lg px-3 sm:px-4 py-2 sm:py-3 text-sm sm:text-base focus:outline-none focus:border-blue-400 transition"
               />
 
               <select
                 name="service"
                 value={formData.service}
                 onChange={handleChange}
-                className="w-full bg-black border border-white/20 rounded-lg px-4 py-3"
+                className="w-full bg-black border border-white/20 rounded-lg px-3 sm:px-4 py-2 sm:py-3 text-sm sm:text-base focus:outline-none focus:border-blue-400 transition"
               >
                 <option value="">Select Service</option>
                 <option>Financial Accounting</option>
@@ -149,12 +149,12 @@ const Contact = () => {
                 onChange={handleChange}
                 required
                 placeholder="Your message..."
-                className="w-full bg-transparent border border-white/20 rounded-lg px-4 py-3 focus:outline-none focus:border-blue-400"
+                className="w-full bg-transparent border border-white/20 rounded-lg px-3 sm:px-4 py-2 sm:py-3 text-sm sm:text-base focus:outline-none focus:border-blue-400 transition resize-none"
               />
 
               {/* Status */}
               {success && (
-                <p className="text-sm text-center text-green-400">
+                <p className="text-xs sm:text-sm text-center text-green-400">
                   {success}
                 </p>
               )}
@@ -162,7 +162,7 @@ const Contact = () => {
               <button
                 type="submit"
                 disabled={loading}
-                className="w-full py-3 rounded-lg bg-gradient-to-r from-blue-500 to-purple-500 hover:scale-105 transition"
+                className="w-full py-2 sm:py-3 rounded-lg bg-gradient-to-r from-blue-500 to-purple-500 hover:scale-105 active:scale-95 transition font-semibold text-sm sm:text-base disabled:opacity-50"
               >
                 {loading ? "Sending..." : "Submit Inquiry 🚀"}
               </button>
