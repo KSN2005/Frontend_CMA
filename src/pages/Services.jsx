@@ -20,7 +20,7 @@ const Services = () => {
   }, []);
 
   return (
-    <div className="relative w-full bg-black text-white min-h-screen px-4 sm:px-6 py-16 md:py-20 overflow-x-hidden overflow-y-visible">
+    <div className="relative w-full bg-black text-white min-h-screen px-4 sm:px-6 py-16 md:py-20 overflow-x-hidden overflow-y-visible" role="main" aria-label="Services page">
 
       {/* 🌈 Background */}
       <div className="absolute inset-0 bg-gradient-to-br from-indigo-900 via-black to-black pointer-events-none" />
