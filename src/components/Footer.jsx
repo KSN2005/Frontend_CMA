@@ -3,8 +3,8 @@ import { Linkedin, Github, Mail } from "lucide-react";
 
 const Footer = () => {
   return (
-    <footer className="bg-black text-white border-t border-white/10 py-8 sm:py-10 px-4 sm:px-6">
-      <div className="max-w-6xl mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 sm:gap-8">
+    <footer className="w-full bg-black text-white border-t border-white/10 py-8 sm:py-10 px-4 sm:px-6 overflow-x-hidden">
+      <div className="w-full max-w-6xl mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 sm:gap-8">
 
         {/* Brand */}
         <div className="text-center sm:text-left">

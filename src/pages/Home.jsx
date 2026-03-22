@@ -64,15 +64,15 @@ const Home = () => {
   }
 
   return (
-    <div className="bg-black text-white overflow-hidden">
+    <div className="relative w-full bg-black text-white overflow-x-hidden overflow-y-visible">
 
       {/* 🌈 Background */}
       <div className="absolute inset-0 bg-gradient-to-br from-indigo-900 via-black to-black" />
-      <div className="absolute w-[300px] h-[300px] md:w-[500px] md:h-[500px] bg-blue-500/20 blur-3xl rounded-full top-[-100px] left-[-100px]" />
-      <div className="absolute w-[250px] h-[250px] md:w-[400px] md:h-[400px] bg-purple-500/20 blur-3xl rounded-full bottom-[-100px] right-[-100px]" />
+      <div className="absolute w-[280px] h-[280px] md:w-[400px] md:h-[400px] bg-blue-500/20 blur-3xl rounded-full -top-32 -left-32 md:-top-40 md:-left-40 pointer-events-none" />
+      <div className="absolute w-[200px] h-[200px] md:w-[350px] md:h-[350px] bg-purple-500/20 blur-3xl rounded-full -bottom-32 -right-32 md:-bottom-40 md:-right-40 pointer-events-none" />
 
       {/* ================= HERO ================= */}
-      <section className="relative z-10 min-h-screen flex items-center justify-center px-4 sm:px-6 py-16 md:py-0">
+      <section className="relative z-10 w-full min-h-screen flex items-center justify-center px-4 sm:px-6 py-16 md:py-0">
 
         <motion.div
           initial={{ opacity: 0, y: 40 }}
@@ -130,12 +130,12 @@ const Home = () => {
       </section>
 
       {/* ================= SERVICES ================= */}
-      <section className="relative z-10 py-12 sm:py-16 md:py-20 px-4 sm:px-6">
+      <section className="relative z-10 w-full py-12 sm:py-16 md:py-20 px-4 sm:px-6">
         <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-center mb-8 sm:mb-12">
           Our Services
         </h2>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 sm:gap-6 max-w-6xl mx-auto">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 sm:gap-6 w-full max-w-6xl mx-auto">
           {services.slice(0, 3).map((service, index) => (
             <motion.div
               key={service._id || index}

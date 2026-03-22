@@ -46,13 +46,13 @@ const Contact = () => {
   };
 
   return (
-    <div className="bg-black text-white min-h-screen px-4 sm:px-6 py-12 sm:py-16 md:py-20">
+    <div className="relative w-full bg-black text-white min-h-screen px-4 sm:px-6 py-12 sm:py-16 md:py-20 overflow-x-hidden overflow-y-visible">
 
       {/* 🌈 Background Glow */}
-      <div className="absolute inset-0 bg-gradient-to-br from-indigo-900 via-black to-black" />
-      <div className="absolute w-[250px] h-[250px] md:w-[400px] md:h-[400px] bg-blue-500/20 blur-3xl rounded-full top-[-100px] left-[-100px]" />
+      <div className="absolute inset-0 bg-gradient-to-br from-indigo-900 via-black to-black pointer-events-none" />
+      <div className="absolute w-[200px] h-[200px] md:w-[400px] md:h-[400px] bg-blue-500/20 blur-3xl rounded-full -top-32 -left-32 md:-top-40 md:-left-40 pointer-events-none" />
 
-      <div className="relative z-10 max-w-6xl mx-auto">
+      <div className="relative z-10 w-full max-w-6xl mx-auto">
 
         {/* Title */}
         <motion.h1
@@ -67,7 +67,7 @@ const Contact = () => {
           Let's discuss how I can help your business grow 🚀
         </p>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8 md:gap-10">
+        <div className="grid w-full grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8 md:gap-10">
 
           {/* INFO CARD */}
           <motion.div

@@ -20,12 +20,12 @@ const Services = () => {
   }, []);
 
   return (
-    <div className="bg-black text-white min-h-screen px-4 sm:px-6 py-16 md:py-20">
+    <div className="relative w-full bg-black text-white min-h-screen px-4 sm:px-6 py-16 md:py-20 overflow-x-hidden overflow-y-visible">
 
       {/* 🌈 Background */}
-      <div className="absolute inset-0 bg-gradient-to-br from-indigo-900 via-black to-black" />
+      <div className="absolute inset-0 bg-gradient-to-br from-indigo-900 via-black to-black pointer-events-none" />
 
-      <div className="relative z-10 max-w-6xl mx-auto">
+      <div className="relative z-10 w-full max-w-6xl mx-auto">
 
         {/* Heading */}
         <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-center mb-2 sm:mb-4">

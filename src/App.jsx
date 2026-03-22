@@ -25,7 +25,7 @@ const App = () => {
   const location = useLocation();
 
   return (
-    <div className="bg-black text-white">
+    <div className="w-full bg-black text-white overflow-x-hidden">
 
       {/* Navbar */}
       <Navbar />

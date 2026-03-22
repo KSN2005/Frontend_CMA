@@ -1,1 +1,15 @@
 @import "tailwindcss";
+
+/* Fix horizontal scroll on mobile devices */
+html,
+body {
+  width: 100%;
+  overflow-x: hidden;
+  margin: 0;
+  padding: 0;
+}
+
+#root {
+  width: 100%;
+  overflow-x: hidden;
+}

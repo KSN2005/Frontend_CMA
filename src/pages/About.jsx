@@ -26,15 +26,15 @@ const About = () => {
   }, []);
 
   return (
-    <div className="bg-black text-white overflow-hidden">
+    <div className="relative w-full bg-black text-white overflow-x-hidden overflow-y-visible">
 
       {/* 🌈 Background Effects */}
-      <div className="absolute inset-0 bg-gradient-to-br from-indigo-900 via-black to-black" />
-      <div className="absolute w-[300px] h-[300px] md:w-[500px] md:h-[500px] bg-blue-500/20 blur-3xl rounded-full top-[-100px] left-[-100px]" />
-      <div className="absolute w-[250px] h-[250px] md:w-[400px] md:h-[400px] bg-purple-500/20 blur-3xl rounded-full bottom-[-100px] right-[-100px]" />
+      <div className="absolute inset-0 bg-gradient-to-br from-indigo-900 via-black to-black pointer-events-none" />
+      <div className="absolute w-[280px] h-[280px] md:w-[400px] md:h-[400px] bg-blue-500/20 blur-3xl rounded-full -top-32 -left-32 md:-top-40 md:-left-40 pointer-events-none" />
+      <div className="absolute w-[200px] h-[200px] md:w-[350px] md:h-[350px] bg-purple-500/20 blur-3xl rounded-full -bottom-32 -right-32 md:-bottom-40 md:-right-40 pointer-events-none" />
 
       {/* ================= HERO ================= */}
-      <section className="relative z-10 text-center py-12 sm:py-16 md:py-20 px-4 sm:px-6">
+      <section className="relative z-10 w-full text-center py-12 sm:py-16 md:py-20 px-4 sm:px-6">
         <motion.h1
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
@@ -55,11 +55,11 @@ const About = () => {
       </section>
 
       {/* ================= ABOUT TEXT ================= */}
-      <section className="relative z-10 px-4 sm:px-6 py-8 sm:py-12">
+      <section className="relative z-10 w-full px-4 sm:px-6 py-8 sm:py-12">
         <motion.div
           initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
-          className="max-w-4xl mx-auto backdrop-blur-lg bg-white/10 border border-white/20 rounded-2xl p-5 sm:p-8 text-base sm:text-lg text-slate-200 leading-relaxed shadow-xl"
+          className="w-full max-w-4xl mx-auto backdrop-blur-lg bg-white/10 border border-white/20 rounded-2xl p-5 sm:p-8 text-base sm:text-lg text-slate-200 leading-relaxed shadow-xl"
         >
           {loading ? (
             <p className="animate-pulse">Loading about text...</p>
@@ -73,12 +73,12 @@ const About = () => {
       </section>
 
       {/* ================= EXPERTISE ================= */}
-      <section className="relative z-10 py-12 sm:py-16 md:py-20 px-4 sm:px-6">
+      <section className="relative z-10 w-full py-12 sm:py-16 md:py-20 px-4 sm:px-6">
         <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-center mb-8 sm:mb-12">
           Core Expertise
         </h2>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 sm:gap-6 md:gap-8 max-w-6xl mx-auto">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 sm:gap-6 md:gap-8 w-full max-w-6xl mx-auto">
 
           {[
             {
@@ -116,11 +116,11 @@ const About = () => {
       </section>
 
       {/* ================= CTA ================= */}
-      <section className="relative z-10 text-center pb-12 sm:pb-16 md:pb-20 px-4 sm:px-6">
+      <section className="relative z-10 w-full text-center pb-12 sm:pb-16 md:pb-20 px-4 sm:px-6">
         <motion.div
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
-          className="max-w-3xl mx-auto"
+          className="w-full max-w-3xl mx-auto"
         >
           <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-4 sm:mb-6">
             Want to grow your business financially?
