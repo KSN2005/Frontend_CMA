@@ -12,7 +12,7 @@ export const api = axios.create({
 
 // ✅ Contact
 export const submitInquiry = (payload) =>
-  api.post("/contact", payload);
+  api.post("/api/contact", payload);
 
 // ✅ Services
 export const fetchServices = () =>
