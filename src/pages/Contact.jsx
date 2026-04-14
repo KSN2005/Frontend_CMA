@@ -27,7 +27,10 @@ const Contact = () => {
     setSuccess("");
 
     try {
+      console.log("📤 Contact form submit payload:", formData);
       const res = await submitInquiry(formData);
+      console.log("📥 Contact submit response:", res.data);
+
       setSuccess(res.data?.message || "✅ Inquiry sent successfully!");
 
       setFormData({
@@ -38,8 +41,13 @@ const Contact = () => {
         message: "",
       });
     } catch (err) {
-      console.error(err);
-      setSuccess("❌ Something went wrong. Try again.");
+      console.error("Contact submit error:", err);
+      const message =
+        err?.response?.data?.error ||
+        err?.response?.data?.message ||
+        err?.message ||
+        "Something went wrong. Try again.";
+      setSuccess(`❌ ${message}`);
     } finally {
       setLoading(false);
     }
