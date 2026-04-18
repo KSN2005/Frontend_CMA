@@ -1,9 +1,37 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
+import { fetchSettings } from "../api/api";
 
 const Navbar = () => {
   const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const [settings, setSettings] = useState({
+    siteName: "CMA Himanshu Sharma",
+    logo: "",
+  });
+  const [settingsLoading, setSettingsLoading] = useState(true);
+
+  // ✅ Load settings on mount
+  useEffect(() => {
+    const loadSettings = async () => {
+      try {
+        setSettingsLoading(true);
+        const data = await fetchSettings();
+        setSettings(prev => ({
+          ...prev,
+          siteName: data.siteName || "CMA Himanshu Sharma",
+          logo: data.logo || "",
+        }));
+      } catch (err) {
+        console.error("❌ Error loading settings:", err);
+        // Keep default values
+      } finally {
+        setSettingsLoading(false);
+      }
+    };
+
+    loadSettings();
+  }, []);
 
   // ✨ Detect scroll for shadow effect
   useEffect(() => {
@@ -31,10 +59,22 @@ const Navbar = () => {
     >
       <div className="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
 
-        {/* Logo */}
-        <h1 className="text-xl md:text-2xl font-bold tracking-wide bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
-          CMA Himanshu Sharma
-        </h1>
+        {/* Logo and Site Name */}
+        <div className="flex items-center gap-3 flex-1">
+          {/* ✅ Dynamic Logo */}
+          {!settingsLoading && settings.logo && (
+            <img
+              src={settings.logo}
+              alt="Logo"
+              className="h-10 w-auto object-contain"
+            />
+          )}
+          
+          {/* ✅ Dynamic Site Name */}
+          <h1 className="text-xl md:text-2xl font-bold tracking-wide bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
+            {settingsLoading ? "Loading..." : settings.siteName}
+          </h1>
+        </div>
 
         {/* Desktop Menu */}
         <div className="hidden md:flex space-x-10 text-lg">
